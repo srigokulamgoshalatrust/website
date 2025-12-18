@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://db.onlinewebfonts.com/c/b77ba77f3aceda2986e5dde8d8339213?family=Bell+MT+Regular+Expert+Alt" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/a35791c9186cb915ec828cb76dd460b5?family=Coronet+MT+W01+Bold" rel="stylesheet">
+
+
+
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: 500;
+        font-variation-settings:
+          "wdth" 100;
+
+      }
+      /* NAVBAR BASE */
+      .navbar-custom {
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        background-color: transparent;
+      }
+
+      .navbar-custom .nav-link, .org-name, .org-tagline {
+        color: white;
+        font-weight:500;
+        transition: color 0.3s;
+      }
+
+      .navbar-custom .nav-link:hover {
+        color: #4da6ff; /* stylish hover color */
+      }
+
+      /* AFTER SCROLL */
+      .navbar-scrolled {
+        background-color:white !important;
+        box-shadow:0 2px 6px rgba(0,0,0,0.15);
+      }
+
+      .navbar-scrolled .nav-link, .navbar-scrolled .org-name, .navbar-scrolled .org-tagline {
+        color: #111 !important; /* dark text after scroll */
+        font-weight: 600;
+      }
+
+      .navbar-scrolled .nav-link:hover {
+        color: #4da6ff !important; /* hover accent */
+      }
+
+      @media (max-width: 991px) {
+        .navbar-brand {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+        }
+      
+        .navbar-brand img {
+          margin-bottom: 5px;
+        }
+      
+        .navbar-brand .ms-3 {
+          margin-left: 0 !important;
+        }
+      
+        /* Keep toggler on right */
+        .navbar .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+
+      .org-name{
+        font-size: 1.8rem !important;
+        font-family: "Bell MT Regular Expert Alt";
+      }
+      .org-tagline{
+        font-size: 1.4rem;
+        font-family:"Coronet MT W01 Bold";
+        line-height: 0.9;
+      }
+
+
+
+      #footer 
+
+      .footer-section {
+        background: #f1f7ff;
+        border-top: 3px solid #add6ff;
+      }
+      
+      .footer-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #000;
+      }
+      
+      .footer-desc {
+        font-size: 0.98rem;
+        color: #444;
+        line-height: 1.6;
+      }
+      
+      /* Social Icons */
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        margin-right: 10px;
+        background: #fff;
+        border-radius: 50%;
+        font-size: 18px;
+        color: #4da6ff;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        transition: 0.3s;
+      }
+      
+      .social-icons a:hover {
+        background: #4da6ff;
+        color: #fff;
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(77,166,255,0.5);
+      }
+      
+      /* Copyright */
+      footer .copyright {
+        color: #333;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+      /*common*/
+      .section-title {
+        font-size:3.2rem;
+        font-weight:700;
+        color:black;
+        text-shadow:1px 1px 4px rgba(0,0,0,0.2);
+      }
+
+
+
+      /* our foundation */
+      /* Background shapes */
+      #our-foundation-hero .foundation-bg {
+        position: absolute;
+        inset: 0;
+        background: url('images/IMG_20251025_144010.jpg') center/cover no-repeat;
+        z-index: 1;
+      }
+      
+      /* Soft overlay */
+      #our-foundation-hero .foundation-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgb(71 68 68 / 78%); /* white tint */
+        z-index: 2;
+      }
+      
+      /* Content styling */
+      #our-foundation-hero .content-wrap {
+        position: relative;
+        z-index: 3;
+        padding: 110px 15px;
+      }
+      
+      /* Title */
+      .foundation-title {
+        margin-top: 70px;
+        font-size: 2.5vw;
+        font-weight: 800;
+        color: #fff;
+        text-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      }
+      
+      /* Description text */
+      .foundation-desc {
+        font-size: 1.1rem;
+        color: #fff;
+        max-width: 850px;
+        margin: 0 auto 15px;
+        line-height: 1.75;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      }
+      
+      /* Mobile adjustments */
+      @media (max-width: 768px) {
+        .foundation-title {
+          font-size: 1.9rem;
+        }
+        .foundation-desc {
+          font-size: 1rem;
+        }
+        #our-foundation-hero .content-wrap {
+          padding: 80px 15px;
+        }
+      }
+
+      /* mission and goals section */
+      #mission-expansion-section {
+        background: #eaf6ff; /* very soft light blue */
+        overflow: hidden;
+        position: relative;
+      }
+      
+      /* Vertical divider */
+      .vertical-divider {
+        width: 2px;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.15);
+      }
+      
+      /* Icons */
+      .icon-wrap i {
+        font-size: 45px;
+        color: #1a75ff;
+        text-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      }
+      
+      /* Titles */
+      .info-title {
+        font-size: 1.6rem;
+        color: #000;
+      }
+      
+      /* Description text */
+      .info-desc {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.65;
+        max-width: 500px;
+      }
+      
+      /* Background bubbles */
+      .bubble {
+        position: absolute;
+        border-radius: 50%;
+        background: #d1e4f5;
+        opacity: 0.45;
+        z-index: 1;
+      }
+      
+      .b1 { width: 100px; height: 100px; top: -40px; left: 20px; }
+      .b2 { width: 140px; height: 140px; bottom: 30px; left: 60px; }
+      .b3 { width: 120px; height: 120px; top: 80px; right: 60px; }
+      .b4 { width: 120px; height: 120px; bottom: 100px; right: 20px; }
+      .b5 { width: 90px; height: 90px; top: 50%; left: 45%; }
+      .b6 { width: 70px; height: 70px; top: 30%; left: 10%; opacity: 0.4; }
+      .b7 { width: 55px; height: 55px; bottom: 20%; right: 25%; opacity: 0.45; }
+      .b8 { width: 65px; height: 65px; top: 15%; right: 40%; opacity: 0.35; }
+      .b9 { width: 50px; height: 50px; bottom: 45%; left: 60%; opacity: 0.5; }
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .vertical-divider { display: none; }
+        .info-title { font-size: 1.4rem; }
+        .icon-wrap i { font-size: 40px; }
+      }
+
+      /* our vision */
+      /* Icon styling */
+      .vision-icon i {
+        font-size: 50px;
+        color: #4da6ff;
+        text-shadow: 0 3px 8px rgba(0,0,0,0.12);
+      }
+
+      /* Title styling */
+      .vision-title {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #000;
+      }
+
+      /* Description styling */
+      .vision-desc {
+        font-size: 1.1rem;
+        color: #444;
+        line-height: 1.75;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .vision-list li, .founder-list li{
+        line-height: 2;
+      }
+
+      /* Mobile adjustments */
+      @media (max-width: 768px) {
+        .vision-title {
+          font-size: 1.7rem;
+        }
+        .vision-desc {
+          font-size: 1rem;
+        }
+        .vision-icon i {
+          font-size: 42px;
+        }
+      }
+
+
+      
+    </style>
+  </head>
+
+  <body style="background: white">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+      <div class="container">
+    
+        <!-- Logo + Text Beside It -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="images/logo.jpeg" 
+               alt="Logo" height="75" width="75">
+    
+          <!-- Text beside logo -->
+          <div class="ms-3 d-flex flex-column">
+            <span class="fw-bold fs-5 org-name">Krishna Gokulam</span>
+            <span class="org-tagline"> - By Sri Gokulam Goshala trust</span>
+          </div>
+        </a>
+    
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Navigation Menu -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/donations">Donation</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about-us">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="/events">Events & Festivals</a></li>
+            <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+          </ul>
+        </div>
+    
+      </div>
+    </nav>
+
+    <!-- Our Foundation -->
+
+    <section id="our-foundation-hero" class="position-relative">
+
+      <!-- Background Image -->
+      <div class="foundation-bg"></div>
+    
+      <!-- Overlay -->
+      <div class="foundation-overlay"></div>
+    
+      <div class="container position-relative content-wrap">
+        <h2 class="foundation-title text-center mb-4">Our Foundation</h2>
+    
+        <p class="foundation-desc text-center">
+          Sri Gokulam Goshala stands as a beacon of hope for cows
+        </p>
+        
+    
+        <p class="foundation-desc text-center">
+          Sri Gokulam Goshala Trust was registered on 03/04/2025 vide registration number 02/IV/2025 with a vision to protect our “Goumata” (mother cow).
+        </p>
+    
+        <p class="foundation-desc text-center">
+          In the sacred texts of Hinduism, cows are revered as Gau Mata (Mother Cow) - divine beings symbolizing gentleness, generosity, abundance, and purity. The cow is considered the earthly embodiment of all gods and goddesses. Our trust was born from the urgent realization that these sacred beings, who have served humanity selflessly for millennia, are now facing unprecedented challenges in our rapidly modernizing world.
+        </p>
+      </div>
+    </section>
+    <section id="mission-expansion-section" class="py-5 position-relative">
+
+      <!-- Background bubbles -->
+      <div class="bubble b1"></div>
+      <div class="bubble b2"></div>
+      <div class="bubble b3"></div>
+      <div class="bubble b4"></div>
+      <div class="bubble b5"></div>
+      <div class="bubble b6"></div>
+      <div class="bubble b7"></div>
+      <div class="bubble b8"></div>
+      <div class="bubble b9"></div>
+    
+      <div class="container position-relative pt-5 pb-5" style="z-index: 5;">
+        <h2 class="section-title text-center mb-5 fw-bold">Our Mission & Crisis</h2>
+    
+        <div class="row align-items-start position-relative">
+    
+          <!-- Mission -->
+          <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+            <div class="icon-wrap mb-3">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+    
+            <h3 class="info-title fw-bold mb-3">Our Mission</h3>
+    
+            <p class="info-desc">
+              To provide lifelong sanctuary to elderly cows while creating awareness about the importance of cow protection in maintaining ecological balance, cultural values, and spiritual well-being of society.
+            </p>
+    
+            <p class="info-desc mb-0">
+              Through proper nutrition, medical attention, and constant care, we ensure
+              every cow receives the life and dignity they deserve.
+            </p>
+            <p class="info-desc mb-0">
+              By fostering compassion and responsible stewardship, we aspire to inspire a harmonious relationship between humans, animals, and nature.
+            </p>
+          
+          </div>
+    
+          <!-- Vertical Divider -->
+          <div class="col-md-1 d-none d-md-flex justify-content-center">
+            <div class="vertical-divider"></div>
+          </div>
+    
+          <!-- Expansion Plans -->
+          <div class="col-md-5 text-center text-md-start">
+            <div class="icon-wrap mb-3">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+          
+    
+            <h3 class="info-title fw-bold mb-3">Current Crisis</h3>
+    
+            <p class="info-desc">
+              The major crisis we face today is the lack of proper shelter. Presently the cows are sheltered at a leased small piece of land.
+            </p>
+    
+            <p class="info-desc mb-0">
+              During rainy season the space congestion causing swamp in the land making Cows more prone to infections and diseases
+During the summer the excessive heat causing sunstroke
+Being stagnant in a congested place for a long time is making it difficult for the cows to conceive and causing mastitis infection
+            </p>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+
+    <!-- our vision -->
+    <section id="our-vision" class="pt-5 pb-5" style="background: #FFF8F0;">
+      <div class="container text-center">
+        
+        <!-- Vision Icon -->
+        <div class="vision-icon mb-3">
+          
+        </div>
+    
+        <!-- Title -->
+        <h2 class="section-title vision-title mb-4"> <i class="fas fa-eye"></i> Our Vision</h2>
+    
+        <!-- Description -->
+        <p class="vision-desc mb-3">
+          Building a Sustainable Future for Sacred Cows
+        </p>
+        <ul class="vision-list list-unstyled mx-auto text-start">
+          <li>✅ <strong>Purchase 20 acres of permanent land:</strong> Secure a forever home for our sacred cows</li>
+          <li>✅ <strong>Build modern cattle shelters for 500+ cows:</strong> Weather-protected spacious facilities with proper ventilation</li>
+          <li>✅ <strong>Establish on-site veterinary hospital:</strong> Complete medical care facility with qualified veterinarians</li>
+          <li>✅ <strong>Create organic farming unit using cow dung:</strong> Generate sustainable income through organic fertilizer production</li>
+          <li>✅ <strong>Set up goseva training center:</strong> Educate youth and volunteers about scientific cow care</li>
+          <li>✅ <strong>Develop sustainable income sources:</strong> Dairy products, biogas, organic farming to support goshala operations</li>
+        </ul>
+    
+      </div>
+    </section>
+
+    <section id="founders" class="py-5" style="background: #eaf6ff;">
+      <div class="container px-5">
+        <h2 class="section-title text-center mb-5 fw-bold">Our Visionaries</h2>
+    
+        <!-- Founder 1: Image left, text right -->
+        <div class="row align-items-center mb-5 founder-row">
+          <div class="col-lg-4 text-center text-lg-start">
+            <img src="images/IMG_20250923_115927.jpg" alt="Founder 1" class="founder-img img-fluid mb-3">
+            <h4 class="founder-name mb-1"><b>Shri Sundilla Banaiah</b></h4>
+            <p class="founder-role mb-0">Founder & President</p>
+          </div>
+          <div class="col-lg-8">
+            <p class="founder-bio">
+              A dedicated retired officer from Singerani Collieries, Shri Sundilla Banaiah's journey towards cow protection began during his childhood. In his young age he used to help his father in the farm fields. Back in the day his father owned many cows and bulls which were used in the fields. Compassionate motherly natured cows were a part of their life.
+            </p>
+            <p class="founder-bio">
+              However, in his adulthood due to his professional obligations he could not continue the gowseva as he did in his childhood. He witnessed the heartbreaking sight of cows on roadsides in urban localities, their eyes filled with pain and betrayal from the very humans they had served.
+            
+            </p>
+            <p class="founder-bio">
+              After retirement in 2015, instead of settling into a comfortable life, he made a life-changing decision. Using his entire provident fund and pension savings, he leased a small piece of land and purchased the first batch of 12 cows.            
+            </p>
+            <p class="founder-bio">
+              Since 2015 when the service was started without any documentation and now after the number of cows reached 158+ unable to bear the crisis, had gone for registration of trust in April 2025, under the name of "SRI GOKULAM GOSHALA TRUST". The trust is formed so that many kind hearted people who have love and affection towards cows can become part of this noble cause by the way they can support within their limits.
+
+            </p>
+          </div>
+          <hr>
+        </div>
+    
+        <!-- Founder 2: Image right, text left -->
+        <div class="row align-items-center mb-5 founder-row flex-lg-row-reverse">
+          <div class="col-lg-4 text-center text-lg-start">
+            <img src="founder2.jpg" alt="Founder 2" class="founder-img mb-3">
+            <h4 class="founder-name mb-1"><b>Smt. Sundilla Susheela</b></h4>
+            <p class="founder-role mb-0">Co-Founder & Treasurer</p>
+          </div>
+          <div class="col-lg-8">
+            <p class="founder-bio">
+              A compassionate homemaker and devoted mother, Smt. Sundilla Susheela comes from agricultural background family. She also has a childhood growing among many cows. She being a devoted wife accompanied Shri Sundilla Banaiah in the gowseva.
+            </p>
+            <p class="founder-bio">Key Contributions:</p>
+            <ul class="founder-list list-unstyled mx-auto text-start">
+              <li>✅ <strong>Nutrition Management:</strong> Plans balanced diet for each cow based on age, health condition, and nutritional needs
+              </li>
+              <li>✅ <strong>Health Monitoring:</strong> Maintains detailed health records and identifies early signs of illness</li>
+              <li>✅ <strong>Volunteer Coordination:</strong> Trains and manages volunteers in proper animal care techniques</li>
+              <li>✅ <strong>Financial Management:</strong> Maintains transparent accounts and donor communications</li>
+              <li>✅ <strong>Emergency Response:</strong> Coordinates rescue operations and emergency medical care</li>
+            </ul>
+          </div>
+        </div>
+    
+      </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer-section py-5">
+      <div class="container">
+    
+        <div class="row">
+    
+          <!-- Description -->
+          <div class="col-md-4 mb-4">
+            <h4 class="footer-title">Sri Gokulam Goshala Trust</h4>
+            <p class="footer-desc">
+              We are dedicated to protecting and caring for cows by providing food, shelter, 
+              and essential medical support. Your help enables us to save more lives.
+            </p>
+          </div>
+    
+          <!-- Social Links -->
+          <div class="col-md-4 mb-4">
+            <h4 class="footer-title">Follow Us</h4>
+            <div class="social-icons mt-3">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-x-twitter"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+    
+          <!-- Contact Info -->
+          <div class="col-md-4 mb-4">
+            <h4 class="footer-title">Contact Us</h4>
+            <p class="footer-desc"><i class="fa fa-envelope me-2"></i>srigokulamgoshalatrust@gmail.com</p>
+            <p class="footer-desc"><i class="fa fa-phone me-2"></i> +91 9121212234</p>
+            <p class="footer-desc"><i class="fa fa-map-marker-alt me-2"></i> 21-1-29/J, Sai Nagar Colony, Godavarikhani, Telangana</p>
+          </div>
+    
+        </div>
+    
+        <div class="text-center pt-4">
+          <p class="copyright">© 2025 All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Add background on scroll
+      const counters = document.querySelectorAll('.counter');
+      const counterSection = document.querySelector('#support');
+      let counted = false;
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('navbar-scrolled');
+        } else {
+          navbar.classList.remove('navbar-scrolled');
+        }
+      /***** counter section *****/
+        const sectionPos = counterSection.getBoundingClientRect().top;
+        const screenPos = window.innerHeight;
+
+        if(sectionPos < screenPos && !counted){
+          counters.forEach(counter => {
+            const updateCount = () => {
+              const target = +counter.getAttribute('data-target');
+              const count = +counter.innerText;
+              const increment = target / 200;
+
+              if(count < target){
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 15);
+              } else {
+                counter.innerText = target;
+              }
+            }
+            updateCount();
+          });
+          counted = true;
+        }
+      });
+
+      
+    </script>
+  </body>
+</html>
